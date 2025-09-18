@@ -49,7 +49,7 @@ app.post("/send-pdf", async (req, res) => {
     const jid = `${phone}@s.whatsapp.net`;
 
     // 1️⃣ Enviar mensaje primero
-    const messageText = `¡Hola! 📄 Aquí tienes tu recibo de la empresa *Ranharvey*.\n\nSi tienes alguna duda, no dudes en contactarnos.\n\n¡Gracias por tu preferencia! 🙌`;
+    const messageText = `¡Hola! 📄 Aquí tienes tu recibo de la empresa *Ranharvey*.\n\nSi tienes alguna duda, no dudes en contactarnos.\n\n¡Gracias por preferirnos! 🙌`;
 
     await providerInstance.sendText(jid, messageText);
 
