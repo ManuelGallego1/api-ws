@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main   # se ejecuta cuando hagas push a main
+  workflow_dispatch:   # 🔹 habilita ejecución manual desde GitHub
 
 jobs:
   deploy:
@@ -21,8 +22,8 @@ jobs:
       - name: Deploy and Restart API-WSP
         run: |
           ssh -o StrictHostKeyChecking=no root@72.60.30.18 "
-            cd /var/www/api-wsp && \
+            cd /var/www/api-ws && \
             git pull origin main && \
-            pm2 restart api-ws || pm2 start ecosystem.config.js --name api-ws && \
+            pm2 restart api-wsp || pm2 start ecosystem.config.js --name api-wsp && \
             pm2 save
           "
